@@ -6,11 +6,13 @@
 
 
 // Returns time difference in miliseconds.
-long getDiff(SYSTEMTIME start, SYSTEMTIME end){
-    int milis = end.wMilliseconds - start.wMilliseconds;
-    int secs = 1000 * (end.wSecond - start.wSecond);
-    int mins = 60000 * (end.wMinute - start.wMinute);
-    return milis + secs + mins;
+unsigned long getDiff(SYSTEMTIME start, SYSTEMTIME end){
+    unsigned long milis = end.wMilliseconds - start.wMilliseconds;
+    unsigned long secs = 1000 * (end.wSecond - start.wSecond);
+    unsigned long mins = 60000 * (end.wMinute - start.wMinute);
+    unsigned long hours = 60000 * 60 * (end.wHour - start.wHour);
+    unsigned long days = 60000 * 60 * 24 * (end.wDay - start.wDay);
+    return milis + secs + mins + hours + days;
 }
 
 
@@ -63,7 +65,7 @@ void main(){
     GetSystemTime(&end);
     // Outputs
     printf("Highest Number of Ones: %d\n", max);
-    printf("Time Taken %dms\n", getDiff(start, end));
+    printf("Time Taken %lums\n", getDiff(start, end));
 
     return;
 }
