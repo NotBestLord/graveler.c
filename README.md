@@ -5,7 +5,7 @@ Python = No No
 C = Yes Yes
 
 # Method #1
-Replaced list shenanigans with [rand() % 4], simple as.
+Replaced list shenanigans with [rand() % 4], simple as.\n
 100000 Sessions takes ~450ms to run, or 0.45s.
 
 # Method #2
