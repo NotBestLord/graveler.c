@@ -22,7 +22,7 @@ int getSuccessfullRolls(){
     int base = rand();
     int baseShifts = 0;
     int r;
-    while(iterations > 0){
+    while(iterations > 0){ //This Could be replaced with a for loop of 33 iterations (231 = 33 * 7)
         if(baseShifts == 7){
             baseShifts = 0;
             base = rand();
